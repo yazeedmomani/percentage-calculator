@@ -1,25 +1,43 @@
-console.log("This app calculates percentages.");
-console.log('100% = 1920 by default.');
-console.log('Write "maximum = number;" to change the value of 100%.');
-console.log('Write "calculate()" to start the app.');
-console.log("Reload the page to clear the console. (Ctrl + R)");
-console.log('***********************************************************************************');
-console.log('');
+"use strict";
 
+//calculator page
 let maximum = 1920;
 
-function calculate(){
-    let lengthInPexels = prompt('Insert a length in pexels or write "quit" to quit the app.');
+function calculate() {
+  let numberInPexels = Number(document.querySelector("#number-in-pexel").value);
+  let numberInPercentage = (numberInPexels * 100) / maximum;
+  document.querySelector("#number-in-percentage").textContent =
+    numberInPercentage.toFixed(5);
+}
 
-    while(lengthInPexels !== "quit"){
-        let lengthInPercentage = lengthInPexels * 100 / maximum;
+function reset() {
+  document.querySelector("#number-in-pexel").value = "";
+  document.querySelector("#number-in-percentage").textContent = "0";
+}
 
-        console.log(`${lengthInPexels} is ${lengthInPercentage}% of ${maximum}`)
-        lengthInPexels = prompt('Insert a length in pexels or write "quit" to quit the app.');
-    };
+function changeValue() {
+  maximum = Number(document.querySelector("#maximum").value);
+  document.querySelector("#maximum").value = "";
+  document.querySelector(".overlay").style.display = "none";
+  document.querySelector(".maximum-value").textContent = `100% = ${maximum}`;
+}
 
-    console.log('');
-    console.log('***********************************************************************************');
-    console.log("                                  You Quit");
-    console.log('***********************************************************************************');
-};
+function overlayOn() {
+  document.querySelector(".overlay").style.display = "block";
+}
+
+function overlayOff() {
+  document.querySelector(".overlay").style.display = "none";
+}
+
+if (
+  document.querySelector("title").textContent ==
+  "Calculator | Percentage Calculator V.2"
+) {
+  document.querySelector(".maximum-value").textContent = `100% = ${maximum}`;
+  document.querySelector("#enter").addEventListener("click", calculate);
+  document.querySelector("#reset").addEventListener("click", reset);
+  document.querySelector("#change").addEventListener("click", changeValue);
+  document.querySelector("#overlay-on").addEventListener("click", overlayOn);
+  document.querySelector("#overlay-off").addEventListener("click", overlayOff);
+}
