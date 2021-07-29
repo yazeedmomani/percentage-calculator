@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator | Percentage Calculator V.2</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../resources/styles/css/main.css"
+      type="text/css"
+      media="screen"
+    />
+  </head>
+  <body>
+    <main class="main">
+      <a href="../index.html" class="page-btn page-btn--back"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="60"
+          height="30"
+          viewBox="0 0 60 30"
+          class="page-btn__icon"
+        >
+          <path
+            id="arrow-left"
+            d="M61,18.5a1.95,1.95,0,0,0-2.143-1.666H8.318L21.8,6.348a1.422,1.422,0,0,0,0-2.36,2.6,2.6,0,0,0-3.034,0L1.629,17.32a1.42,1.42,0,0,0,0,2.36L18.77,33.011a2.6,2.6,0,0,0,3.034,0,1.422,1.422,0,0,0,0-2.36L8.318,20.166H58.856A1.95,1.95,0,0,0,61,18.5Z"
+            transform="translate(-0.999 -3.499)"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </a>
+      <a href="#" class="page-btn page-btn--settings" id="overlay-on"
+        ><svg
+          id="black-settings-button"
+          xmlns="http://www.w3.org/2000/svg"
+          width="45"
+          height="45"
+          viewBox="0 0 45 45"
+          class="page-btn__icon"
+        >
+          <path
+            id="Path_1"
+            data-name="Path 1"
+            d="M45,22.5a4.463,4.463,0,0,0-2.693-3.984,6.183,6.183,0,0,1-3.347-2.831,6.218,6.218,0,0,1,.368-4.374,4.469,4.469,0,0,0-.917-4.723,4.468,4.468,0,0,0-4.723-.916,6.21,6.21,0,0,1-4.369.369,6.206,6.206,0,0,1-2.831-3.349A4.472,4.472,0,0,0,22.5,0a4.472,4.472,0,0,0-3.989,2.692A6.21,6.21,0,0,1,15.68,6.041a6.212,6.212,0,0,1-4.37-.369,4.469,4.469,0,0,0-4.723.916,4.469,4.469,0,0,0-.916,4.723,6.206,6.206,0,0,1,.364,4.373,6.189,6.189,0,0,1-3.344,2.833A4.462,4.462,0,0,0,0,22.5a4.472,4.472,0,0,0,2.692,3.989,6.208,6.208,0,0,1,3.346,2.833,6.2,6.2,0,0,1-.366,4.368,4.469,4.469,0,0,0,.916,4.723,4.471,4.471,0,0,0,4.723.916,6.206,6.206,0,0,1,4.37-.367,6.224,6.224,0,0,1,2.831,3.351A4.473,4.473,0,0,0,22.5,45a4.473,4.473,0,0,0,3.989-2.688,6.229,6.229,0,0,1,2.829-3.351,6.2,6.2,0,0,1,4.371.368,4.3,4.3,0,0,0,5.64-5.639,6.213,6.213,0,0,1-.37-4.37,6.208,6.208,0,0,1,3.35-2.831A4.474,4.474,0,0,0,45,22.5ZM22.5,30.756a8.252,8.252,0,1,1,8.247-8.247A8.247,8.247,0,0,1,22.5,30.756Z"
+          />
+        </svg>
+      </a>
+      <div class="center-container">
+        <div class="calculator">
+          <div class="calculator__row">
+            <div class="calculator__number-in-pexel">
+              <input
+                type="number"
+                name="number-in-pexel"
+                id="number-in-pexel"
+                class="input"
+              />
+            </div>
+
+            <div class="calculator__type">px</div>
+          </div>
+          <div class="calculator__row">
+            <div
+              class="calculator__number-in-percentage"
+              id="number-in-percentage"
+            >
+              0
+            </div>
+            <div class="calculator__type">%</div>
+          </div>
+          <div class="calculator__row">
+            <div class="calculator__btn-container">
+              <button class="calculator__btn" id="reset">Reset</button>
+            </div>
+            <div class="calculator__btn-container">
+              <button class="calculator__btn" id="enter">Enter</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <section class="main overlay">
+      <a href="#" class="page-btn page-btn--back" id="overlay-off"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="60"
+          height="30"
+          viewBox="0 0 60 30"
+          class="page-btn__icon"
+        >
+          <path
+            id="arrow-left"
+            d="M61,18.5a1.95,1.95,0,0,0-2.143-1.666H8.318L21.8,6.348a1.422,1.422,0,0,0,0-2.36,2.6,2.6,0,0,0-3.034,0L1.629,17.32a1.42,1.42,0,0,0,0,2.36L18.77,33.011a2.6,2.6,0,0,0,3.034,0,1.422,1.422,0,0,0,0-2.36L8.318,20.166H58.856A1.95,1.95,0,0,0,61,18.5Z"
+            transform="translate(-0.999 -3.499)"
+            fill-rule="evenodd"
+          /></svg
+      ></a>
+      <div class="info" id="info">
+        100% = 1920px by default. Write a number below and click on "Change" to
+        change the value of 100%
+      </div>
+      <div class="center-container">
+        <div class="value-changer">
+          <div class="row margin-bottom-medium">
+            <div class="value-changer__input-container">
+              <input
+                type="number"
+                name="change-value"
+                class="input"
+                placeholder="Write a number"
+                id="maximum"
+              />
+            </div>
+          </div>
+          <button class="btn" id="change">Change</button>
+        </div>
+      </div>
+      <div class="maximum-value">maximum value</div>
+    </section>
+    <script src="../resources/scripts/main.js"></script>
+  </body>
+</html>
